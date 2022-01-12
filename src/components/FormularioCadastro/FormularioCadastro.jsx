@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import DadosUsuario from '../DadosUsuario';
+import DadosUsuario from './DadosUsuario';
 import DadosPessoais from './DadosPessoais';
+import DadosEntrega from './DadosEntrega';
+
 
 
 function FormularioCadastro({ aoEnviar, validarCPF }) {
@@ -8,6 +10,7 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
         <>
             <DadosPessoais aoEnviar={aoEnviar} validarCPF={validarCPF} />
             <DadosUsuario />
+            <DadosEntrega />
         </>
     );
 }
