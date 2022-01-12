@@ -4,11 +4,10 @@ import FormularioCadastro from './components/FormularioCadastro/FormularioCadast
 import { Container, Typography  } from '@material-ui/core';
 import '@fontsource/roboto';
 
-export default class App extends Component { 
+class App extends Component { 
  render() {
     return (
-      <Container component="article" maxWidth="sm"> 
-
+      <Container component="article" maxWidth="sm">
         <Typography variant="h3" component="h1" align="center">
           Formulário de cadastro
         </Typography>
@@ -30,3 +29,5 @@ function validarCPF(cpf){
     return {valido: true, texto: ""}
   }
 }
+
+export default App;
