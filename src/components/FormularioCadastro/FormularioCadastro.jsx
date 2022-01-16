@@ -4,24 +4,24 @@ import DadosPessoais from './DadosPessoais';
 import DadosEntrega from './DadosEntrega';
 import { Step, StepLabel, Stepper, Typography } from '@material-ui/core';
 
-function FormularioCadastro({ aoEnviar, validacoes }) {
+function FormularioCadastro({ aoEnviar }) {
     const [etapaAtual, setEtapaAtual] = useState(0);
     const [dadosColetados, setDados] = useState({});
 
     useEffect(() => {
-        if(etapaAtual === formualrios.length-1)
+        if (etapaAtual === formualrios.length - 1)
             aoEnviar(dadosColetados);
     })
 
     const formualrios = [
-        <DadosUsuario aoEnviar={coletarDados} validacoes={validacoes} />,
-        <DadosPessoais aoEnviar={coletarDados} validacoes={validacoes} />,
-        <DadosEntrega aoEnviar={coletarDados} validacoes={validacoes} />,
+        <DadosUsuario aoEnviar={coletarDados} />,
+        <DadosPessoais aoEnviar={coletarDados} />,
+        <DadosEntrega aoEnviar={coletarDados} />,
         <Typography variant="h5">Obrigado pelo Cadastro!</Typography>
     ]
 
-    function coletarDados(dados){
-        setDados({...dadosColetados, ...dados})
+    function coletarDados(dados) {
+        setDados({ ...dadosColetados, ...dados })
         proximo();
     }
 
@@ -37,7 +37,7 @@ function FormularioCadastro({ aoEnviar, validacoes }) {
                 <Step><StepLabel>Entrega</StepLabel></Step>
                 <Step><StepLabel>Finalização</StepLabel></Step>
             </Stepper>
-            {formualrios[etapaAtual]}            
+            {formualrios[etapaAtual]}
         </>
     );
 }
