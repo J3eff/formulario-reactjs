@@ -14,6 +14,4 @@ function validarSenha(senha){
     }
 }
 
-
-
 export {validarCPF, validarSenha};
